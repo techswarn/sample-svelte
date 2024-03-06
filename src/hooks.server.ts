@@ -2,7 +2,7 @@ import { redirect } from "@sveltejs/kit";
 
 export async function handle({ event, resolve }) {
   console.log(event.url.host);
-  if (event.url.host == "0.0.0.0:3000") {
+  if (event.url.host == "www.techenv.dev") {
     console.log("Thats a match");
   }
   if (event.url.pathname.startsWith("/custom")) {
