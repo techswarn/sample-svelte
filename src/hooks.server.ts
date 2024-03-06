@@ -9,7 +9,7 @@ export async function handle({ event, resolve }) {
     console.log("Thats a match");
     throw redirect(301, "https://techenv.dev");
   }
-  if (event.url.pathname.startsWith("/custom")) {
+  if (hostname.startsWith("www")) {
     return new Response("custom response");
   }
 
