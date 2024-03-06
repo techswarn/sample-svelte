@@ -6,7 +6,7 @@ export async function handle({ event, resolve }) {
     console.log("Thats a match");
     throw redirect(301, "https://techenv.dev");
   }
-  if (event.url.host == "www.techenv.dev") {
+  if (event.url.pathname.startsWith("/custom")) {
     return new Response("custom response");
   }
 
