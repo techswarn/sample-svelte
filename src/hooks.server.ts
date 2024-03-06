@@ -1,10 +1,10 @@
 import { redirect } from "@sveltejs/kit";
 
 export async function handle({ event, resolve }) {
-  console.log(event.url.host);
+  console.log(event);
   // if route matches "/banana" return banana
-  if (event.url.host == "www.techenv.dev") {
-    throw redirect(301, "techenv.dev");
+  if (event.host == "www.techenv.dev") {
+    redirect(301, "techenv.dev");
   }
 
   // otherwise use the default behavior
