@@ -1,6 +1,7 @@
 import { redirect } from "@sveltejs/kit";
 
 export async function handle({ event, resolve }) {
+  console.log(event.url);
   const url = new URL(event.request.url);
   const hostname = url.hostname;
   console.log(event.url.host);
@@ -9,7 +10,7 @@ export async function handle({ event, resolve }) {
     console.log("Thats a match");
     throw redirect(301, "https://techenv.dev");
   }
-  if (hostname.startsWith("www")) {
+  if (event.url.pathname.startsWith("/custom")) {
     return new Response("custom response");
   }
 
