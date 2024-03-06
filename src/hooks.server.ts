@@ -1,7 +1,7 @@
 import { redirect } from "@sveltejs/kit";
 
 export async function handle({ event, resolve }) {
-  console.log(event.url);
+  console.log(event);
   const url = new URL(event.request.url);
   const hostname = url.hostname;
   console.log(event.url.host);
